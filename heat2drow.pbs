@@ -1,0 +1,13 @@
+#!/bin/sh
+#PBS -q home 
+#PBS -N heat2drow1000-4
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=0:10:00
+#PBS -o heat2drow1000-4.dat
+#PBS -e error-row-1000-4.out
+#PBS -V
+#PBS -M nallaire@ucsd.edu
+#PBS -m abe
+#PBS -A ucsd-train101
+cd /home/ucsd-train101/PA-2-nickallaire
+mpirun -np 4 heat2drow 1000 1000 100 0 0 0 0.001 heat2drow1000-4.out
